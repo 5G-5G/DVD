@@ -1,0 +1,142 @@
+import java.util.Scanner; 
+// date 06/10/2022
+// Author Mohammed Sayed 
+// Program: Option Menu 
+
+
+public class  Main 
+{
+    static String name;
+    static int num1, num2, num3;
+    static float sum, average;
+    
+    
+public static void  main( String [] args ) { 
+    
+    
+    System.out.println   ( " Enter your name : " );
+    Scanner nameIn = new Scanner ( System.in);
+    name = nameIn.nextLine (); 
+    Menu();
+}
+
+
+
+
+public static void Menu() {
+    
+int userOption;
+System.out.println  ( " Enter an option ");
+Scanner optIn = new Scanner ( System.in );
+
+
+do 
+{ // Start of the do while loop 
+    
+    System.out.println ( " 1. Call ADD3 method ");
+    System.out.println ( " 2. Call DVD method ");
+    System.out.println ( " 3. Exit the program "); 
+    
+    
+    userOption = optIn.nextInt ();
+    
+    switch ( userOption)
+    {
+        case 1: { 
+            System.out.println( " You selected option 1 for ADD3 method ");
+            ADD3 ();
+            break;
+            
+    }
+    
+    
+    case 2: {
+        System.out.println ( " You selected option 2 for DVD method");
+        DVD();
+        break;
+    }
+    
+    
+    case 3: { 
+        System.out.println ( " You selected option 3 ");
+        exit();
+        break;
+    }
+    
+    
+    default:{ 
+        System.out.println ( " Invalid option - You entered " + userOption + " You MUST only enter 1, 2 or 3 ");
+        break;
+    }
+    
+    
+    } // Close switch 
+    
+}while ( userOption !=3); // closes do while loop 
+} // close the menu () method 
+
+
+
+public static void ADD3 ()
+{
+    
+    System.out.println ( " This is option 1 message ");
+    
+    System.out.println( " Enter your name "); //prompt to user to get the name into the main program 
+    Scanner nameIn = new Scanner ( System.in);
+    name = nameIn.nextLine();
+
+    System.out.println();
+    System.out.println ( " Enter the first number : "); // prompt to user 
+    Scanner readIn = new Scanner ( System.in); // create new scanner 
+    num1 = readIn.nextInt();
+    
+    
+    System.out.println( " Enter the second number : ");
+    num2 = readIn.nextInt();
+    
+    
+    System.out.println( " Enter the third number : ");
+    num3 = readIn.nextInt();
+
+    sum = num1 + num2 + num3;
+    average = sum/3;
+
+    System.out.println ( " Hi " + name + " The sum is : " + sum);
+    System.out.println ( " The average is : " + String.format("%.2f", average));
+    
+} // End of opt1msg 
+
+public static void DVD ()
+{
+   System.out.println("Enter customer name...");   //Prompt the user to enter name
+        Scanner nameIn = new Scanner (System.in);       
+        String name = nameIn.nextLine();                //next () v nextLine ()
+        System.out.println ( " Enter DVD title ... ");
+        
+        String title = nameIn.nextLine();
+        System.out.println( " Enter hire period in days ... ");
+        
+        Scanner daysIn = new Scanner (System.in);
+        int days = daysIn.nextInt();
+        
+        double hire = 4.5;
+        
+        float amount_due = days * (float)hire;
+        
+        System.out.println();
+        System.out.println( " Cutomer name : "  + name);
+        System.out.println( " DVD Title : "  + title);
+        System.out.println( " Hire Period : " + days + " days ");
+        System.out.println( " Amount due is £"+ String.format( "%.2f", amount_due));
+} // End of opt2msg
+
+
+
+public static void exit ()
+{
+    
+    System.out.println ( " Program is now termainating ");
+}
+} // End of public class 
+    
